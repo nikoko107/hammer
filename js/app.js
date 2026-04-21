@@ -287,6 +287,19 @@ function switchTab(tabName) {
 // ── Event binding ──────────────────────────────────────────────────────────────
 
 function bindEvents() {
+  // Collapsible sections
+  document.querySelectorAll('.collapsible').forEach(card => {
+    const btn = card.querySelector('.btn-collapse');
+    const h2  = card.querySelector('h2');
+    function toggle() {
+      const isCollapsed = card.classList.toggle('collapsed');
+      btn.textContent = isCollapsed ? '▶' : '▼';
+      btn.setAttribute('aria-expanded', !isCollapsed);
+    }
+    btn.addEventListener('click', (e) => { e.stopPropagation(); toggle(); });
+    h2.addEventListener('click',  () => toggle());
+  });
+
   // Pseudo input
   document.getElementById('pseudo-input').addEventListener('input', (e) => {
     Storage.set('pseudo', e.target.value.trim());

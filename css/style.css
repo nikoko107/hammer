@@ -94,6 +94,44 @@ body {
   color: var(--accent);
   border-bottom: 2px solid var(--accent);
   padding-bottom: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.collapsible h2 {
+  margin-bottom: 0;
+  cursor: pointer;
+  user-select: none;
+}
+
+.collapsible:not(.collapsed) h2 {
+  margin-bottom: 14px;
+}
+
+.card-body {
+  overflow: hidden;
+}
+
+.collapsed .card-body {
+  display: none;
+}
+
+.btn-collapse {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-size: 12px;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+  flex-shrink: 0;
+  transition: background .15s;
+  line-height: 1;
+}
+
+.btn-collapse:hover {
+  background: #E3F2FD;
 }
 
 /* ── Form rows ────────────────────────────────────────────────────────────── */
