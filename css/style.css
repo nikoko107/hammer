@@ -101,20 +101,6 @@ body {
 
 .collapsible h2 {
   margin-bottom: 0;
-  cursor: pointer;
-  user-select: none;
-}
-
-.collapsible:not(.collapsed) h2 {
-  margin-bottom: 14px;
-}
-
-.card-body {
-  overflow: hidden;
-}
-
-.collapsed .card-body {
-  display: none;
 }
 
 .btn-collapse {

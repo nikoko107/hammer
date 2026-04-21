@@ -287,17 +287,25 @@ function switchTab(tabName) {
 // ── Event binding ──────────────────────────────────────────────────────────────
 
 function bindEvents() {
-  // Collapsible sections
+  // Collapsible sections — toggle via inline style to avoid CSS specificity issues
   document.querySelectorAll('.collapsible').forEach(card => {
-    const btn = card.querySelector('.btn-collapse');
-    const h2  = card.querySelector('h2');
-    function toggle() {
-      const isCollapsed = card.classList.toggle('collapsed');
-      btn.textContent = isCollapsed ? '▶' : '▼';
-      btn.setAttribute('aria-expanded', !isCollapsed);
-    }
-    btn.addEventListener('click', (e) => { e.stopPropagation(); toggle(); });
-    h2.addEventListener('click',  () => toggle());
+    const btn  = card.querySelector('.btn-collapse');
+    const body = card.querySelector('.card-body');
+
+    // Set initial state explicitly
+    body.style.display = 'none';
+    btn.textContent = '▶';
+    btn.setAttribute('aria-expanded', 'false');
+
+    const h2 = card.querySelector('h2');
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const expand = body.style.display === 'none';
+      body.style.display = expand ? '' : 'none';
+      h2.style.marginBottom = expand ? '14px' : '0';
+      btn.textContent = expand ? '▼' : '▶';
+      btn.setAttribute('aria-expanded', expand);
+    });
   });
 
   // Pseudo input
