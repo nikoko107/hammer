@@ -117,14 +117,22 @@
 
       <div class="tab-pane" data-tab="links" id="pane-links" role="tabpanel">
         <div class="links-toolbar">
-          <label for="links-filter">Filtrer :</label>
-          <select id="links-filter" aria-label="Filtrer les liens par état">
-            <option value="all">Tous</option>
-            <option value="unverified">Non vérifiés</option>
-            <option value="0">🔴 Ne fonctionne pas</option>
-            <option value="1">🟡 Doute</option>
-            <option value="2">🟢 Correspond</option>
-          </select>
+          <div class="filter-group">
+            <label for="links-filter-cat">Catégorie :</label>
+            <select id="links-filter-cat" aria-label="Filtrer les liens par catégorie">
+              <option value="all">Toutes</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="links-filter">État :</label>
+            <select id="links-filter" aria-label="Filtrer les liens par état">
+              <option value="all">Tous</option>
+              <option value="unverified">Non vérifiés</option>
+              <option value="0">🔴 Ne fonctionne pas</option>
+              <option value="1">🟡 Doute</option>
+              <option value="2">🟢 Correspond</option>
+            </select>
+          </div>
         </div>
         <div id="links-container" class="links-container" aria-live="polite">
         </div>
