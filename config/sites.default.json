@@ -19,7 +19,7 @@
   { "id": "pinterest",     "name": "Pinterest",       "url": "https://www.pinterest.com/{pseudo}/",                "cat": "social"  },
   { "id": "snapchat",      "name": "Snapchat",        "url": "https://www.snapchat.com/add/{pseudo}",              "cat": "social"  },
   { "id": "strava",        "name": "strava",          "url": "https://www.strava.com/athletes/{pseudo}",           "cat": "social"  },
-  { "id": "truthsocial",   "name": "truthsocial",     "url": "https://truthsocial.com/{pseudo}",                   "cat": "social"  },
+  { "id": "truthsocial",   "name": "truthsocial",     "url": "https://truthsocial.com/@{pseudo}",                  "cat": "social"  },
   { "id": "twitch",        "name": "Twitch",          "url": "https://www.twitch.tv/{pseudo}",                     "cat": "gaming"  },
   { "id": "steam",         "name": "Steam",           "url": "https://steamcommunity.com/id/{pseudo}/",            "cat": "gaming"  },
   { "id": "chess",         "name": "Chess.com",       "url": "https://www.chess.com/member/{pseudo}",              "cat": "gaming"  },
