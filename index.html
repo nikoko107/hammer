@@ -39,22 +39,27 @@
     </section>
 
     <!-- Section 2: Leet table -->
-    <section class="card" aria-labelledby="leet-heading">
-      <h2 id="leet-heading">Table leet</h2>
-      <div class="table-wrapper">
-        <table class="leet-table" aria-label="Paires de substitution leet">
-          <thead>
-            <tr>
-              <th scope="col">✓</th>
-              <th scope="col">De</th>
-              <th scope="col"></th>
-              <th scope="col">Vers</th>
-              <th scope="col">Catégorie</th>
-            </tr>
-          </thead>
-          <tbody id="leet-tbody">
-          </tbody>
-        </table>
+    <section class="card collapsible collapsed" aria-labelledby="leet-heading">
+      <h2 id="leet-heading">
+        Table leet
+        <button class="btn-collapse" aria-expanded="false" aria-label="Développer la table leet" title="Développer / Réduire">▶</button>
+      </h2>
+      <div class="card-body">
+        <div class="table-wrapper">
+          <table class="leet-table" aria-label="Paires de substitution leet">
+            <thead>
+              <tr>
+                <th scope="col">✓</th>
+                <th scope="col">De</th>
+                <th scope="col"></th>
+                <th scope="col">Vers</th>
+                <th scope="col">Catégorie</th>
+              </tr>
+            </thead>
+            <tbody id="leet-tbody">
+            </tbody>
+          </table>
+        </div>
       </div>
     </section>
 
@@ -72,25 +77,30 @@
     </section>
 
     <!-- Section 4: Sites -->
-    <section class="card" aria-labelledby="sites-heading">
-      <h2 id="sites-heading">Sites à tester</h2>
-      <div class="table-wrapper">
-        <table class="sites-table" aria-label="Liste des sites">
-          <thead>
-            <tr>
-              <th scope="col">Nom</th>
-              <th scope="col">URL template</th>
-              <th scope="col"></th>
-            </tr>
-          </thead>
-          <tbody id="sites-tbody">
-          </tbody>
-        </table>
-      </div>
-      <div class="add-site-row">
-        <input type="text" id="new-site-name" placeholder="Nom du site" aria-label="Nom du nouveau site">
-        <input type="text" id="new-site-url" placeholder="https://example.com/{pseudo}" aria-label="URL du nouveau site (doit contenir {pseudo})">
-        <button id="btn-add-site" class="btn-primary">+ Ajouter</button>
+    <section class="card collapsible collapsed" aria-labelledby="sites-heading">
+      <h2 id="sites-heading">
+        Sites à tester
+        <button class="btn-collapse" aria-expanded="false" aria-label="Développer la liste des sites" title="Développer / Réduire">▶</button>
+      </h2>
+      <div class="card-body">
+        <div class="table-wrapper">
+          <table class="sites-table" aria-label="Liste des sites">
+            <thead>
+              <tr>
+                <th scope="col">Nom</th>
+                <th scope="col">URL template</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody id="sites-tbody">
+            </tbody>
+          </table>
+        </div>
+        <div class="add-site-row">
+          <input type="text" id="new-site-name" placeholder="Nom du site" aria-label="Nom du nouveau site">
+          <input type="text" id="new-site-url" placeholder="https://example.com/{pseudo}" aria-label="URL du nouveau site (doit contenir {pseudo})">
+          <button id="btn-add-site" class="btn-primary">+ Ajouter</button>
+        </div>
       </div>
     </section>
 

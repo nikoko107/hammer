@@ -12,8 +12,13 @@ const Sites = (() => {
 
   function getSites() {
     const stored = Storage.get('sites');
-    if (stored && Array.isArray(stored) && stored.length > 0) return stored;
-    return defaultSites;
+    if (!stored || !Array.isArray(stored) || !stored.length) return defaultSites;
+    // Enrich stored entries with fields from defaults when missing (cat, strip_bad_char)
+    return stored.map(s => {
+      if (s.cat) return s;
+      const def = defaultSites.find(d => d.id === s.id);
+      return def ? { ...def, ...s } : s;
+    });
   }
 
   function saveSites(sites) {
