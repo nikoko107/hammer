@@ -33,7 +33,6 @@
   { "id": "flickr",        "name": "Flickr",          "url": "https://www.flickr.com/people/{pseudo}",             "cat": "images"  },
   { "id": "patreon",       "name": "Patreon",         "url": "https://www.patreon.com/{pseudo}",                   "cat": "misc"    },
   { "id": "linktree",      "name": "Linktree",        "url": "https://linktr.ee/{pseudo}",                         "cat": "misc"    },
-  { "id": "gravatar",      "name": "Gravatar",        "url": "https://gravatar.com/{pseudo}",                      "cat": "misc"    },
   { "id": "blogspot",      "name": "Blogspot",        "url": "https://{pseudo}.blogspot.com",                      "cat": "blog",   "strip_bad_char": "_" },
   { "id": "carrd",         "name": "Carrd",           "url": "https://{pseudo}.carrd.co",                          "cat": "misc",   "strip_bad_char": "_" }
 ]
