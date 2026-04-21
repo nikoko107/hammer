@@ -1,6 +1,18 @@
 [
+  { "id": "facebook",  "name": "Facebook",  "url": "https://www.facebook.com/{pseudo}" },
+  { "id": "x",         "name": "X",         "url": "https://x.com/{pseudo}" },
+  { "id": "instagram", "name": "Instagram", "url": "https://www.instagram.com/{pseudo}/" },
+  { "id": "bluesky",   "name ": "Bluesky",   "url": "https://bsky.app/profile/{pseudo}bsky.social" },
+  { "id": "reddit",    "name": "Reddit",    "url": "https://www.reddit.com/user/{pseudo}/" },
   { "id": "github",    "name": "GitHub",    "url": "https://github.com/{pseudo}" },
-  { "id": "twitter",   "name": "X/Twitter", "url": "https://x.com/{pseudo}" },
-  { "id": "instagram", "name": "Instagram", "url": "https://instagram.com/{pseudo}" },
-  { "id": "reddit",    "name": "Reddit",    "url": "https://reddit.com/user/{pseudo}" }
+  { "id": "gitlab",    "name": "GitLab",    "url": "https://gitlab.com/{pseudo}" },
+  { "id": "threads",   "name": "Threads",   "url": "https://www.threads.net/@{pseudo}" },
+  { "id": "tiktok",    "name": "TikTok",    "url": "https://www.tiktok.com/@{pseudo}" },
+  { "id": "pinterest", "name": "Pinterest", "url": "https://www.pinterest.fr/{pseudo}/" },
+  { "id": "4chan",     "name": "4chan",     "url": "https://boards.4chan.org/{pseudo}" },
+  { "id": "youtube",   "name": "YouTube",   "url": "https://www.youtube.com/@{pseudo}" },
+  { "id": "aboutme",   "name": "About.me",  "url": "https://about.me/{pseudo}" },
+  { "id": "fiverr",    "name": "Fiverr",    "url": "https://www.fiverr.com/{pseudo}" },  
+  { "id": "medium",    "name": "Medium",    "url": "https://medium.com/@{pseudo}" },
+  { "id": "linkedin",  "name": "LinkedIn",  "url": "https://www.linkedin.com/in/{pseudo}/"}
 ]
