@@ -38,8 +38,14 @@ const Sites = (() => {
     Storage.remove('sites');
   }
 
-  function buildUrl(urlTemplate, variant) {
-    return urlTemplate.replace('{pseudo}', encodeURIComponent(variant));
+  function buildUrl(site, variant) {
+    let v = variant;
+    if (site.strip_bad_char) {
+      for (const ch of site.strip_bad_char) {
+        v = v.split(ch).join('');
+      }
+    }
+    return site.url.replace('{pseudo}', encodeURIComponent(v));
   }
 
   return { loadDefaults, getSites, saveSites, addSite, removeSite, resetToDefaults, buildUrl };
