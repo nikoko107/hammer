@@ -1,8 +1,8 @@
 [
-  { "id": "facebook://www.facebook.com/{pseudo}" },
+  { "id": "facebook",  "name": "Facebook",  "url": "https://www.facebook.com/{pseudo}" },
   { "id": "x",         "name": "X",         "url": "https://x.com/{pseudo}" },
   { "id": "instagram", "name": "Instagram", "url": "https://www.instagram.com/{pseudo}/" },
-  { "id": "bluesky",   "name": "Bluesky",   "url": "https://bsky.app/profile/{pseudo}" },
+  { "id": "bluesky",   "name": "Bluesky",   "url": "https://bsky.app/profile/{pseudo}bsky.social" },
   { "id": "reddit",    "name": "Reddit",    "url": "https://www.reddit.com/user/{pseudo}/" },
   { "id": "github",    "name": "GitHub",    "url": "https://github.com/{pseudo}" },
   { "id": "gitlab",    "name": "GitLab",    "url": "https://gitlab.com/{pseudo}" },
