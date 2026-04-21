@@ -213,6 +213,14 @@ function renderWordlist(variants) {
   document.getElementById('wordlist-textarea').value = variants.join('\n');
 }
 
+function populateCategoryFilter(sites) {
+  const sel = document.getElementById('links-filter-cat');
+  const current = sel.value;
+  const cats = [...new Set(sites.map(s => s.cat).filter(Boolean))].sort();
+  sel.innerHTML = '<option value="all">Toutes</option>' +
+    cats.map(c => `<option value="${escHtml(c)}"${current === c ? ' selected' : ''}>${escHtml(c)}</option>`).join('');
+}
+
 function renderLinks(variants) {
   const sites = Sites.getSites();
   const linkStates = Storage.get('link_states', {});
@@ -220,7 +228,10 @@ function renderLinks(variants) {
   const container = document.getElementById('links-container');
   container.innerHTML = '';
 
-  const filterVal = document.getElementById('links-filter') ? document.getElementById('links-filter').value : 'all';
+  populateCategoryFilter(sites);
+
+  const filterState = document.getElementById('links-filter').value;
+  const filterCat   = document.getElementById('links-filter-cat').value;
 
   for (const variant of variants) {
     for (const site of sites) {
@@ -228,10 +239,11 @@ function renderLinks(variants) {
       const state = linkStates[compositeKey] ?? null;
       const clicked = linkClicked[compositeKey] ?? false;
 
-      if (filterVal === 'unverified' && state !== null) continue;
-      if (filterVal === '0' && state !== 0) continue;
-      if (filterVal === '1' && state !== 1) continue;
-      if (filterVal === '2' && state !== 2) continue;
+      if (filterCat !== 'all' && (site.cat || '') !== filterCat) continue;
+      if (filterState === 'unverified' && state !== null) continue;
+      if (filterState === '0' && state !== 0) continue;
+      if (filterState === '1' && state !== 1) continue;
+      if (filterState === '2' && state !== 2) continue;
 
       const url = Sites.buildUrl(site, variant);
       const div = document.createElement('div');
@@ -393,11 +405,13 @@ function bindEvents() {
     }
   });
 
-  // Links filter
-  document.getElementById('links-filter').addEventListener('change', () => {
+  // Links filters (state + category)
+  function onFilterChange() {
     const results = Storage.get('results', null);
     if (results && results.variants) renderLinks(results.variants);
-  });
+  }
+  document.getElementById('links-filter').addEventListener('change', onFilterChange);
+  document.getElementById('links-filter-cat').addEventListener('change', onFilterChange);
 
   // Reset
   document.getElementById('btn-reset').addEventListener('click', () => {
