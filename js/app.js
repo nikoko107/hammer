@@ -81,8 +81,8 @@ function renderSitesEditor() {
     const tr = document.createElement('tr');
     tr.dataset.id = site.id;
     tr.innerHTML = `
-      <td>${escHtml(site.name)}</td>
-      <td class="url-cell"><span title="${escHtml(site.url)}">${escHtml(site.url)}</span></td>
+      <td>${escHtml(site.name)}${site.cat ? `<span class="site-cat">${escHtml(site.cat)}</span>` : ''}</td>
+      <td class="url-cell"><span title="${escHtml(site.url)}">${escHtml(site.url)}</span>${site.strip_bad_char ? `<span class="strip-badge" title="Caractères ignorés par ce site">strip: <code>${escHtml(site.strip_bad_char)}</code></span>` : ''}</td>
       <td><button class="btn-icon btn-delete-site" data-id="${site.id}" aria-label="Supprimer ${escHtml(site.name)}" title="Supprimer">🗑</button></td>
     `;
     tbody.appendChild(tr);
@@ -233,7 +233,7 @@ function renderLinks(variants) {
       if (filterVal === '1' && state !== 1) continue;
       if (filterVal === '2' && state !== 2) continue;
 
-      const url = Sites.buildUrl(site.url, variant);
+      const url = Sites.buildUrl(site, variant);
       const div = document.createElement('div');
       div.className = 'link-row';
       div.dataset.key = compositeKey;
