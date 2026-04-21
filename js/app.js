@@ -403,14 +403,7 @@ function bindEvents() {
   document.getElementById('btn-reset').addEventListener('click', () => {
     if (!confirm('Réinitialiser complètement l\'application ? Toutes les données seront perdues.')) return;
     Storage.clearAll();
-    Sites.resetToDefaults();
-    document.getElementById('pseudo-input').value = '';
-    document.getElementById('distance-select').value = '1';
-    restoreState();
-    renderLeetTable();
-    renderSitesEditor();
-    renderResults();
-    showToast('Application réinitialisée.', 'success');
+    location.reload();
   });
 
   // Export
